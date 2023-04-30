@@ -10,17 +10,21 @@ app.use(cors());
 
 app.get("/getTitle", (req, res) => {
   const { website } = req.query;
-  const options = {
-    method: "GET",
-    url: website,
-  };
+  // const options = {
+  //   method: "GET",
+  //   url: website,
+  // };
+
   axios
-    .request(options)
+    .get("https://ek-backend.onrender.com/getTitle", {
+      params: { website: `https://${website}` },
+    })
     .then((response) => {
       res.json(response.data);
     })
     .catch((err) => {
       console.log(err);
+      res.json({ message: "Error when fetching data" });
     });
 });
 
