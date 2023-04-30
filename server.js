@@ -10,15 +10,8 @@ app.use(cors());
 
 app.get("/getTitle", (req, res) => {
   const { website } = req.query;
-  // const options = {
-  //   method: "GET",
-  //   url: website,
-  // };
-
   axios
-    .get("https://ek-backend.onrender.com/getTitle", {
-      params: { website: `https://${website}` },
-    })
+    .get(website)
     .then((response) => {
       res.json(response.data);
     })
