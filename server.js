@@ -1,7 +1,7 @@
 const axios = require("axios");
 const express = require("express");
 const cors = require("cors");
-// const PORT = 3001 || process.env.PORT;
+const PORT = 3001 || process.env.PORT;
 const fs = require("fs");
 const path = require("path");
 
@@ -25,14 +25,20 @@ app.get("/getTitle", (req, res) => {
 });
 
 app.get("/getProducts", (req, res) => {
-  const filePath = path.join(__dirname, "products.json");
-  fs.readFile(filePath, "utf-8", (err, data) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ message: "Error reading products file" });
-      return;
-    }
-    const products = JSON.parse(data);
-    res.json(products);
-  });
+  console.log("getprod");
+  res.json({ test: "Test" });
+  // const filePath = path.join(__dirname, "products.json");
+  // fs.readFile(filePath, "utf-8", (err, data) => {
+  //   if (err) {
+  //     console.error(err);
+  //     res.status(500).json({ message: "Error reading products file" });
+  //     return;
+  //   }
+  //   const products = JSON.parse(data);
+  //   res.json(products);
+  // });
+});
+
+app.listen(PORT, () => {
+  console.log("listening", PORT);
 });
