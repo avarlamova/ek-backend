@@ -24,7 +24,7 @@ app.get("/getTitle", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      res.json({ message: "Error when fetching data" });
+      res.status(400).json({ error: "No such website" });
     });
 });
 
