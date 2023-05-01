@@ -36,6 +36,6 @@ app.get("/getProducts", (req, res) => {
   });
 });
 
-// app.listen(PORT, () => {
-//   console.log("listening", PORT);
-// });
+app.listen(PORT, () => {
+  console.log("listening", PORT);
+});
