@@ -1,7 +1,7 @@
 const axios = require("axios");
 const express = require("express");
 const cors = require("cors");
-// const PORT = 3001 || process.env.PORT;
+const PORT = 3001 || process.env.PORT;
 const fs = require("fs");
 const path = require("path");
 
