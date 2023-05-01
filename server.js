@@ -1,7 +1,7 @@
 const axios = require("axios");
 const express = require("express");
 const cors = require("cors");
-const PORT = 3001 || process.env.PORT;
+// const PORT = 3001 || process.env.PORT;
 const fs = require("fs");
 const path = require("path");
 
@@ -17,7 +17,7 @@ app.get("/getTitle", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(400).json({ error: "No such website" });
+      res.status(500).json({ error: "No such website" });
     });
 });
 
@@ -36,6 +36,6 @@ app.get("/getProducts", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log("listening", PORT);
-});
+// app.listen(PORT, () => {
+//   console.log("listening", PORT);
+// });
